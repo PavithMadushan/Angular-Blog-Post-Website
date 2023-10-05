@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../post.model';
 import { PostService } from '../post.services';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,7 +11,7 @@ import { PostService } from '../post.services';
 export class PostComponent implements OnInit{
   @Input() post?: Post;
   @Input() index:number = 0 ;
-  constructor(private postService:PostService){}
+  constructor(private postService:PostService,private router:Router,private route:ActivatedRoute){}
 
 
   ngOnInit(): void {
@@ -22,6 +23,15 @@ export class PostComponent implements OnInit{
   onDelete(){
     console.log("onDelete calledd");
     this.postService.deletePost(this.index);
+  }
+
+  onEdit(){
+    console.log("onEdit called");
+    this.router.navigate(['/post-edit',this.index])
+  }
+
+  likePost(){
+    this.postService.likePost(this.index);
   }
 
 }
