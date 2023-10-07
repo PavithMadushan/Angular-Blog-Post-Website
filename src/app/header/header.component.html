@@ -13,12 +13,12 @@
           <li><a routerLink="/post-list">Home</a></li>
         </ul>
         <ul class="nav navbar-nav">
-            <li><a routerLink="/post-edit">Add Post</a></li>
+            <li><a routerLink="/post-add">Add Post</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a style="cursor:pointer"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a></li>
-          <li><a style="cursor:pointer"><span class="glyphicon glyphicon-download"></span> Fetch</a></li>
+          <li><a style="cursor:pointer" (click)="onSave()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a></li>
+          <li><a style="cursor:pointer" (click)="onFetch()"><span class="glyphicon glyphicon-download"></span> Fetch</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

@@ -1,11 +1,11 @@
-<h1>{{post?.title}}</h1>
+<h1>{{post?.title | uppercase}}</h1>
 <p>{{post?.description}}</p>
 
 <img src="{{post?.imagePath}}"
 class="img-responsive"/>
 
 <p>Author : {{post?.author}}</p>
-<p>Date : {{post?.datetimerelated}}</p>
+<p>Date : {{post?.datetimerelated | date}}</p>
 
 
 <button type="button" (click)="likePost()" class="btn btn-default btn-sm">
